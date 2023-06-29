@@ -5,7 +5,6 @@ function change_name(){
 
     text = document.getElementById('birthday-text')
     text.innerHTML = message + "<br>" + name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-    console.log(String(link) == "https://example.com");
     if (String(link) == "https://example.com"){
         document.getElementById("rainbow-button").style.display = "none";
     }
