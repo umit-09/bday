@@ -1,100 +1,114 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Fireworks Form</title>
+  <head>
+    <title>Fireworks Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Quicksand', sans-serif;
+        background-color: #121212;
+        color: #FFFFFF;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        transition: all 3s ease;
+      }
+      
+      #box {
+        background-color: #333333;
+        border-radius: 10px;
+        padding: 20px;
+        padding-right: 40px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        user-select: none;
+      }
+      
+      input[type="number"],
+      input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #555555;
+        background-color: #222222;
+        color: #FFFFFF;
+        margin-bottom: 10px;
+        border-color: #FF4081;
+        outline: none;
+      }
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Flow+Circular&display=swap" rel="stylesheet">
+      input[type="number"]:focus,
+      input[type="text"]:focus {
+        border-color: #37c014;
+      }
+  
+      input[type="submit"], button {
+        background-color: #FF4081;
+        color: #FFFFFF;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 1s ease;
+        margin-bottom: 10px;
+      }
+      
+      input[type="submit"]:hover, button:hover {
+        background-color: #c70050;
+        transition: all 1s ease;
+      }
 
-        <style>
-            body {
-              font-family: 'Quicksand', sans-serif;
-              background-color: #121212;
-              color: #FFFFFF;
-              margin: 0;
-              padding: 0;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              min-height: 100vh;
-              transition: all 3s ease;
-            }
+      .input-container {
+        position: relative;
+      }
 
-            label:hover{
-                font-family: 'Flow Circular';
-            }
-        
-            form {
-              background-color: #333333;
-              border-radius: 10px;
-              padding: 20px;
-              padding-right: 40px;
-              box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
-            }
-        
-            label {
-              display: block;
-              margin-bottom: 10px;
-              font-weight: bold;
-            }
-        
-            input[type="number"],
-            input[type="text"] {
-              width: 100%;
-              padding: 8px;
-              border-radius: 5px;
-              border: 1px solid #555555;
-              background-color: #222222;
-              color: #FFFFFF;
-              margin-bottom: 10px;
-            }
-        
-            input[type="submit"] {
-              background-color: #FF4081;
-              color: #FFFFFF;
-              padding: 10px 20px;
-              border: none;
-              border-radius: 5px;
-              cursor: pointer;
-              transition: all 1s ease;
-            }
-        
-            input[type="submit"]:hover {
-              background-color: #E6005C;
-              transition: all 1s ease;
-            }
-          </style>
+    </style>
+  </head>
+  <body style="font-family: 'Quicksand';">
+    <div id="box">
+      <form action="main.html" method="GET">
+        <label for="amountMin">Amount Min:</label>
+        <input type="number" name="amountMin" id="amountMin" required value="40"><br>
 
-    </head>
-    <body style="font-family: 'Quicksand';">
-        <form action="main.html" method="GET">
-            <label for="amountMin">Amount Min:</label>
-            <input type="number" name="amountMin" id="amountMin" required value="40"><br>
+        <label for="amountMax">Amount Max:</label>
+        <input type="number" name="amountMax" id="amountMax" required value="50"><br>
 
-            <label for="amountMax">Amount Max:</label>
-            <input type="number" name="amountMax" id="amountMax" required value="50"><br>
+        <label for="velocityMin">Velocity Min:</label>
+        <input type="number" name="velocityMin" id="velocityMin" step="0.1" required value="1"><br>
 
-            <label for="velocityMin">Velocity Min:</label>
-            <input type="number" name="velocityMin" id="velocityMin" step="0.1" required value="1"><br>
+        <label for="velocityMax">Velocity Max:</label>
+        <input type="number" name="velocityMax" id="velocityMax" step="0.1" required value="2"><br>
 
-            <label for="velocityMax">Velocity Max:</label>
-            <input type="number" name="velocityMax" id="velocityMax" step="0.1" required value="2"><br>
+        <label for="gravity">Gravity:</label>
+        <input type="number" name="gravity" id="gravity" step="0.01" required value="0.03"><br>
 
-            <label for="gravity">Gravity:</label>
-            <input type="number" name="gravity" id="gravity" step="0.01" required value="0.03"><br>
+        <label for="maxFireworks">Max Fireworks:</label>
+        <input type="number" name="maxFireworks" id="maxFireworks" required value="3"><br>
 
-            <label for="maxFireworks">Max Fireworks:</label>
-            <input type="number" name="maxFireworks" id="maxFireworks" required value="3"><br>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required value="name"><br>
 
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name" required value="name"><br>
+        <label for="name">Text:</label>
+        <input type="text" name="text" id="text" required value="Happy Birthday!"><br>
 
-            <input type="submit" value="Submit">
-        </form>
-    </body>
+        <label for="name">Link (if you want):</label>
+        <input type="text" name="link" id="link" value="https://example.com"><br>
+
+        <input type="submit" value="Submit">
+      </form>
+      <button onclick="copyFormOutput()">Share</button>
+    </div>
+    <script src="./index.js"></script>
+  </body>
 </html>

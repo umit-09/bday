@@ -22,7 +22,7 @@
       font-size: 48px;
       font-weight: bold;
       text-align: center;
-      -webkit-text-fill-color: rgb(255, 196, 255);
+      -webkit-text-fill-color: #ffc4ff;
       border: 6px solid transparent;
       animation: rainbow-border-animation 5s linear infinite;
     }
@@ -37,6 +37,25 @@
       85% { border-color: violet; }
       100% { border-color: red; }
     }
+
+    #rainbow-button {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: transparent;
+      border: 6px solid transparent;
+      outline: none;
+      cursor: pointer;
+      font-family: 'Quicksand';
+      font-size: 24px;
+      font-weight: bold;
+      color: rgb(255, 196, 255);
+      padding: 10px 20px;
+      border-radius: 30px;
+      animation: rainbow-border-animation 5s linear infinite;
+      text-decoration: none;
+    }
   </style>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,6 +67,8 @@
   <div id="fireworks-container">
     <h1 id="birthday-text">Happy Birthday!</h1>
   </div>
+
+  <a id="rainbow-button" style="display: none;">Click Me!</a> 
 
   <script src="fireworks.js"></script>
   <script src="name.js"></script>
