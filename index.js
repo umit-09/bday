@@ -7,12 +7,14 @@ function copyFormOutput() {
     params.append(name, value);
   }
   
-  const mainPageURL = new URL(window.location.origin + '/main.html');
-  console.log(mainPageURL);
-  mainPageURL.search = params.toString();
+  const baseURL = window.location.origin + '/bday';
+  const mainPageURL = '/main.html';
+  const queryParams = params.toString();
   
-  navigator.clipboard.writeText(mainPageURL.href).then(function() {
-    console.log(mainPageURL.href);
-    alert("Link copied to clipboard!\n\n" + mainPageURL.href);
+  const finalURL = `${baseURL}${mainPageURL}${queryParams ? `?${queryParams}` : ''}`;
+  
+  navigator.clipboard.writeText(finalURL).then(function() {
+    console.log(finalURL);
+    alert("Link copied to clipboard!\n\n" + finalURL);
   });
 }
