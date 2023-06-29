@@ -7,11 +7,11 @@ function copyFormOutput() {
     params.append(name, value);
   }
   
-  const currentURL = new URL(window.location.href);
-  currentURL.search = params.toString();
+  const mainPageURL = new URL(window.location.origin + '/main.html');
+  mainPageURL.search = params.toString();
   
-  navigator.clipboard.writeText(currentURL.href).then(function() {
-    console.log(currentURL.href);
-    alert("Link copied to clipboard!\n\n"+currentURL.href);
+  navigator.clipboard.writeText(mainPageURL.href).then(function() {
+    console.log(mainPageURL.href);
+    alert("Link copied to clipboard!\n\n" + mainPageURL.href);
   });
 }
