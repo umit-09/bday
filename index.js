@@ -10,8 +10,10 @@ function copyFormOutput() {
   const mainPageURL = new URL(window.location.origin + '/main.html');
   mainPageURL.search = params.toString();
   
-  navigator.clipboard.writeText(mainPageURL.href).then(function() {
-    console.log(mainPageURL.href);
-    alert("Link copied to clipboard!\n\n" + mainPageURL.href);
+  const finalURL = mainPageURL.href;
+  
+  navigator.clipboard.writeText(finalURL).then(function() {
+    console.log(finalURL);
+    alert("Link copied to clipboard!\n\n" + finalURL);
   });
 }
